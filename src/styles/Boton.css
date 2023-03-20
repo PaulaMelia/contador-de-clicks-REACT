@@ -1,0 +1,27 @@
+button {
+  width: 250px;
+  height: 80px;
+  font-size: 35px;
+  font-family: Roboto, sans-serif;
+  font-weight: bold; /*negrita*/
+  color: blanchedalmond;
+  border:2px solid white; /*grosor  solido  blanco*/
+  border-radius: 15px;
+  margin: 5px;
+  cursor: pointer; /*efecto boton*/
+}
+
+/*Efectos para cuando el cursor este encima del boton, le ponemos que cambie de color*/
+button:hover{
+  background-color: #16a516;
+}
+
+/*boton de click*/
+.boton-click{
+  background-color: #002ead;
+}
+
+.boton-reiniciar{
+  background-color: #732fa0;
+}
+

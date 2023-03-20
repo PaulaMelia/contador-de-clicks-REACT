@@ -1,23 +1,46 @@
-import logo from './logo.svg';
+
 import './App.css';
+import freeCodeCampLogo from './imagenes/freecodecamp-logo.png';
+import Boton from './componentes/Boton';
+import Contador from './componentes/Contador';
+import { useState } from 'react';
 
 function App() {
+
+  /*INTERACTIVIDAD */
+  /*Es comun en el arrayde estado, el segundo nombre poner set+el primer nombre del estado,set significa asignar */
+  /*valor inicial lde clicks */
+  const [numeroClicks, setnumeroClicks] = useState(0); 
+  
+  const click =() =>{
+   setnumeroClicks(numeroClicks + 1) ;
+  };
+  const reiniciarContador =() =>{
+   setnumeroClicks(0);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div className='freecodecamp-logo-contenedor'>
+        <img className='freecodecamp-logo' 
+        src={freeCodeCampLogo} 
+        alt='Logo freecodecamp'
+        />
+      </div>
+      <div className='contenedor-principal'>
+        <Contador
+        numeroClicks={ numeroClicks }  />
+
+        <Boton 
+        texto='Click'
+        botonClick={true}
+        usarClick={click} />
+
+        <Boton
+        texto='Reiniciar'
+        botonClick={false}
+        usarClick={reiniciarContador} />
+      </div>
     </div>
   );
 }
